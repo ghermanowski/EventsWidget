@@ -22,6 +22,8 @@
 		F519567C27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* EventsWidget.intentdefinition */; };
 		F519567D27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* EventsWidget.intentdefinition */; };
 		F519568027EC6644008FC9E0 /* EventsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F519566F27EC6643008FC9E0 /* EventsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F519568527EC68BF008FC9E0 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
+		F54CE7E527EC8BEE00D4F5D2 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,7 @@
 		F519567827EC6643008FC9E0 /* EventsWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = EventsWidget.intentdefinition; sourceTree = "<group>"; };
 		F519567927EC6644008FC9E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F519567B27EC6644008FC9E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,7 @@
 		F519567527EC6643008FC9E0 /* EventsWidget */ = {
 			isa = PBXGroup;
 			children = (
+				F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */,
 				F519567627EC6643008FC9E0 /* EventsWidget.swift */,
 				F519567827EC6643008FC9E0 /* EventsWidget.intentdefinition */,
 				F519567927EC6644008FC9E0 /* Assets.xcassets */,
@@ -304,6 +308,8 @@
 			files = (
 				F519567727EC6643008FC9E0 /* EventsWidget.swift in Sources */,
 				F519567C27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */,
+				F519568527EC68BF008FC9E0 /* EventStore.swift in Sources */,
+				F54CE7E527EC8BEE00D4F5D2 /* Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +443,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "EventsWidget uses your events to display them in a widget.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -467,6 +474,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "EventsWidget uses your events to display them in a widget.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

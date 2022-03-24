@@ -2,12 +2,13 @@
 //  EventsWidget.swift
 //  EventsWidget
 //
-//  Created by Gregor Hermanowski on 24. March.
+//  Created by Gregor Hermanowski on 24. March 2022.
 //
 
-import WidgetKit
-import SwiftUI
+import EventKit
 import Intents
+import SwiftUI
+import WidgetKit
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -40,11 +41,54 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationIntent
 }
 
-struct EventsWidgetEntryView : View {
+struct EventsWidgetEntryView: View {
+	internal init(entry: Provider.Entry) {
+		self.entry = entry
+		self.canAccessEvents = EventStore.shared.canAccessEvents
+		self.events = EventStore.shared.events(for: entry.date)
+	}
+	
     var entry: Provider.Entry
-
+	let canAccessEvents: Bool
+	let events: [EKEvent]
+	
     var body: some View {
-        Text(entry.date, style: .time)
+		Group {
+			if !canAccessEvents {
+				Placeholder("No Access to Events")
+			} else if events.isEmpty {
+				Placeholder("No more jobs!")
+			} else {
+				VStack {
+					LazyVGrid(columns: [GridItem()]) {
+						ForEach(events, id: \.eventIdentifier) { event in
+							HStack {
+								Image(systemName: "star.fill")
+									.foregroundColor(Color(cgColor: event.calendar.cgColor))
+								
+								VStack(alignment: .leading) {
+									Text(event.title)
+										.font(.title3.weight(.semibold))
+									
+									Text(event.startDate...event.endDate)
+										.font(.subheadline.weight(.medium))
+								}
+								.padding(.vertical, 6)
+								
+								Spacer()
+							}
+							.padding(.horizontal, 10)
+							.background(.ultraThinMaterial)
+							.clipShape(ContainerRelativeShape())
+						}
+					}
+					.padding()
+					
+					Spacer()
+				}
+			}
+		}
+		.background(.linearGradient(colors: [.orange, .red], startPoint: .top, endPoint: .bottom))
     }
 }
 
@@ -56,8 +100,8 @@ struct EventsWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             EventsWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Today's Events")
+        .description("Displays your events for today.")
     }
 }
 
