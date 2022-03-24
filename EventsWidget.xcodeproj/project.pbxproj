@@ -13,6 +13,8 @@
 		F519565D27EC64FC008FC9E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519564B27EC64FB008FC9E0 /* ContentView.swift */; };
 		F519565E27EC64FC008FC9E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F519564C27EC64FC008FC9E0 /* Assets.xcassets */; };
 		F519565F27EC64FC008FC9E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F519564C27EC64FC008FC9E0 /* Assets.xcassets */; };
+		F519566927EC6599008FC9E0 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
+		F519566A27EC6599008FC9E0 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		F519565127EC64FC008FC9E0 /* EventsWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F519565727EC64FC008FC9E0 /* EventsWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F519565927EC64FC008FC9E0 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		F519566827EC6599008FC9E0 /* EventStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			children = (
 				F519564A27EC64FB008FC9E0 /* EventsWidgetApp.swift */,
 				F519564B27EC64FB008FC9E0 /* ContentView.swift */,
+				F519566827EC6599008FC9E0 /* EventStore.swift */,
 				F519564C27EC64FC008FC9E0 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -178,6 +182,7 @@
 			files = (
 				F519565C27EC64FC008FC9E0 /* ContentView.swift in Sources */,
 				F519565A27EC64FC008FC9E0 /* EventsWidgetApp.swift in Sources */,
+				F519566927EC6599008FC9E0 /* EventStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +192,7 @@
 			files = (
 				F519565D27EC64FC008FC9E0 /* ContentView.swift in Sources */,
 				F519565B27EC64FC008FC9E0 /* EventsWidgetApp.swift in Sources */,
+				F519566A27EC6599008FC9E0 /* EventStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
