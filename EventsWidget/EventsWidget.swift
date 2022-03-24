@@ -41,12 +41,31 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationIntent
 }
 
+struct WidgetDate: View {
+	var body: some View {
+		VStack(alignment: .leading, spacing: .zero) {
+			Text(Date.now.formatted(.dateTime.weekday(.wide)))
+				.font(.footnote.weight(.semibold))
+				.foregroundStyle(.linearGradient(colors: [.red, .pink],
+												 startPoint: .top,
+												 endPoint: .bottom))
+			
+			Text(Date.now.formatted(.dateTime.day()))
+				.font(.title3.weight(.semibold))
+		}
+		.padding(.leading, 4)
+		.offset(y: 2)
+	}
+}
+
 struct EventsWidgetEntryView: View {
 	internal init(entry: Provider.Entry) {
 		self.entry = entry
 		self.canAccessEvents = EventStore.shared.canAccessEvents
 		self.events = EventStore.shared.events(for: entry.date)
 	}
+	
+	@Environment(\.colorScheme) private var colourScheme
 	
     var entry: Provider.Entry
 	let canAccessEvents: Bool
@@ -59,36 +78,42 @@ struct EventsWidgetEntryView: View {
 			} else if events.isEmpty {
 				Placeholder("No more jobs!")
 			} else {
-				VStack {
-					LazyVGrid(columns: [GridItem()]) {
+				VStack(alignment: .leading, spacing: 8) {
+					WidgetDate()
+					
+					LazyVGrid(columns: [GridItem()], spacing: 6) {
 						ForEach(events, id: \.eventIdentifier) { event in
+							let eventColour = Color(cgColor: event.calendar.cgColor)
+							
 							HStack {
 								Image(systemName: "star.fill")
-									.foregroundColor(Color(cgColor: event.calendar.cgColor))
 								
 								VStack(alignment: .leading) {
 									Text(event.title)
-										.font(.title3.weight(.semibold))
+										.font(.subheadline.weight(.medium))
 									
 									Text(event.startDate...event.endDate)
-										.font(.subheadline.weight(.medium))
+										.font(.footnote.weight(.semibold))
+										.foregroundStyle(.secondary)
 								}
 								.padding(.vertical, 6)
 								
-								Spacer()
+								Spacer(minLength: .zero)
 							}
+							.foregroundColor(eventColour)
+							.blendMode(colourScheme == .light ? .plusDarker : .plusLighter)
 							.padding(.horizontal, 10)
-							.background(.ultraThinMaterial)
+							.background(eventColour.opacity(0.125))
 							.clipShape(ContainerRelativeShape())
 						}
 					}
-					.padding()
 					
 					Spacer()
 				}
+				.padding([.top, .horizontal], 12)
 			}
 		}
-		.background(.linearGradient(colors: [.orange, .red], startPoint: .top, endPoint: .bottom))
+		.background(Color(uiColor: .systemBackground))
     }
 }
 
