@@ -13,15 +13,26 @@ final class EventStore: ObservableObject {
 	
 	private init() {}
 	
+	private(set) var canAccessEvents = EKEventStore.authorizationStatus(for: .event) == .authorized
+	
 	let ekEventStore = EKEventStore()
 	
-	@Published private(set) var events = [EKEvent]()
-	
-	func refresh() {
-		let today = Calendar.current.startOfDay(for: .now)
-		let predicate = ekEventStore.predicateForEvents(withStart: today,
-														end: today.advanced(by: 86400),
+	func events(for date: Date) -> [EKEvent] {
+		let startOfDay = Calendar.current.startOfDay(for: date)
+		let predicate = ekEventStore.predicateForEvents(withStart: startOfDay,
+														end: startOfDay.advanced(by: 86400),
 														calendars: nil)
-		events = ekEventStore.events(matching: predicate)
+		return ekEventStore.events(matching: predicate)
+	}
+	
+	func requestAccess() {
+		ekEventStore.requestAccess(to: .event) { granted, error in
+			guard error == nil else {
+				print(error!)
+				return
+			}
+			
+			self.canAccessEvents = granted
+		}
 	}
 }

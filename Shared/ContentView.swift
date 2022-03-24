@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+		Button {
+			EventStore.shared.requestAccess()
+		} label: {
+			Text("Request Access")
+				.padding(8)
+		}
+		.buttonStyle(.borderedProminent)
+		.tint(.orange)
     }
 }
 
