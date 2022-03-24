@@ -23,12 +23,17 @@ struct Placeholder: View {
 				
 				Text(title)
 					.font(.title3.weight(.semibold))
-					.foregroundColor(.white)
+					.multilineTextAlignment(.center)
 				
 				Spacer()
 			}
+			.padding(.top)
 			
 			Spacer()
+		}
+		.overlay(alignment: .topLeading) {
+			WidgetDate()
+				.padding([.leading, .vertical], 12)
 		}
 	}
 }
