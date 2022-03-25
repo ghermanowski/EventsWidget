@@ -11,38 +11,29 @@ import SwiftUI
 import WidgetKit
 
 struct Provider: IntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
-    }
-
-    func getSnapshot(for configuration: ConfigurationIntent,
+	func placeholder(in context: Context) -> SimpleEntry {
+		SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+	}
+	
+	func getSnapshot(for configuration: ConfigurationIntent,
 					 in context: Context,
 					 completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
-        completion(entry)
-    }
-
-    func getTimeline(for configuration: ConfigurationIntent,
+		let entry = SimpleEntry(date: Date(), configuration: configuration)
+		completion(entry)
+	}
+	
+	func getTimeline(for configuration: ConfigurationIntent,
 					 in context: Context,
 					 completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
-    }
+		let entry = SimpleEntry(date: .now, configuration: configuration)
+		let timeline = Timeline(entries: [entry], policy: .atEnd)
+		completion(timeline)
+	}
 }
 
 struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let configuration: ConfigurationIntent
+	let date: Date
+	let configuration: ConfigurationIntent
 }
 
 struct WidgetDate: View {
@@ -71,11 +62,11 @@ struct EventsWidgetEntryView: View {
 	
 	@Environment(\.colorScheme) private var colourScheme
 	
-    var entry: Provider.Entry
+	var entry: Provider.Entry
 	let canAccessEvents: Bool
 	let events: [EKEvent]
 	
-    var body: some View {
+	var body: some View {
 		Group {
 			if !canAccessEvents {
 				Placeholder("No Access to Events")
@@ -118,32 +109,32 @@ struct EventsWidgetEntryView: View {
 			}
 		}
 		.background(Color(uiColor: .systemBackground))
-    }
+	}
 }
 
 @main
 struct EventsWidget: Widget {
-    let kind: String = "EventsWidget"
-
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            EventsWidgetEntryView(entry: entry)
-        }
-        .configurationDisplayName("Today's Events")
-        .description("Displays your events for today.")
+	let kind: String = "EventsWidget"
+	
+	var body: some WidgetConfiguration {
+		IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+			EventsWidgetEntryView(entry: entry)
+		}
+		.configurationDisplayName("Today's Events")
+		.description("Displays your events for today.")
 		.supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
-    }
+	}
 }
 
 struct EventsWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        EventsWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+	static var previews: some View {
+		EventsWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+			.previewContext(WidgetPreviewContext(family: .systemSmall))
 		
 		EventsWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
 			.previewContext(WidgetPreviewContext(family: .systemMedium))
 		
 		EventsWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
 			.previewContext(WidgetPreviewContext(family: .systemLarge))
-    }
+	}
 }
