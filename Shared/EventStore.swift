@@ -23,6 +23,7 @@ final class EventStore: ObservableObject {
 														end: startOfDay.advanced(by: 86400),
 														calendars: nil)
 		return ekEventStore.events(matching: predicate)
+			.filter { $0.endDate > .now }
 	}
 	
 	func requestAccess() {
