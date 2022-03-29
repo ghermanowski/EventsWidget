@@ -121,7 +121,7 @@ struct EventsWidget: Widget {
 			EventsWidgetEntryView(entry: entry)
 		}
 		.configurationDisplayName("Today's Events")
-		.description("Displays your events for today.")
+		.description("Your remaining events for today.")
 		.supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
 	}
 }

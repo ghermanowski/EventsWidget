@@ -22,7 +22,8 @@ struct Placeholder: View {
 				Spacer()
 				
 				Text(title)
-					.font(.title3.weight(.semibold))
+					.font(.headline.weight(.medium))
+					.foregroundColor(.secondary)
 					.multilineTextAlignment(.center)
 				
 				Spacer()
