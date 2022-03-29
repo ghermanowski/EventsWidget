@@ -83,6 +83,8 @@
 		F519567927EC6644008FC9E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F519567B27EC6644008FC9E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		F578B23F27F38389005D6C1F /* EventsWidget--iOS--Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EventsWidget--iOS--Info.plist"; sourceTree = "<group>"; };
+		F578B24127F3839F005D6C1F /* EventsWidget--macOS--Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EventsWidget--macOS--Info.plist"; sourceTree = "<group>"; };
 		F59FC0E227F366B3006F3948 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
 		F59FC0EA27F36BFA006F3948 /* ConfigurationIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ConfigurationIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F59FC0EB27F36BFA006F3948 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
@@ -133,6 +135,8 @@
 				F519567527EC6643008FC9E0 /* EventsWidget */,
 				F59FC0ED27F36BFA006F3948 /* ConfigurationIntent */,
 				F519567027EC6643008FC9E0 /* Frameworks */,
+				F578B24127F3839F005D6C1F /* EventsWidget--macOS--Info.plist */,
+				F578B23F27F38389005D6C1F /* EventsWidget--iOS--Info.plist */,
 				F519565227EC64FC008FC9E0 /* Products */,
 			);
 			sourceTree = "<group>";
