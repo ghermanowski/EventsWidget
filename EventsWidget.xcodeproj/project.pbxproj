@@ -14,7 +14,6 @@
 		F519565E27EC64FC008FC9E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F519564C27EC64FC008FC9E0 /* Assets.xcassets */; };
 		F519565F27EC64FC008FC9E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F519564C27EC64FC008FC9E0 /* Assets.xcassets */; };
 		F519566927EC6599008FC9E0 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
-		F519566A27EC6599008FC9E0 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 		F519567227EC6643008FC9E0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F519567127EC6643008FC9E0 /* WidgetKit.framework */; };
 		F519567427EC6643008FC9E0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F519567327EC6643008FC9E0 /* SwiftUI.framework */; };
 		F519567727EC6643008FC9E0 /* EventsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519567627EC6643008FC9E0 /* EventsWidget.swift */; };
@@ -22,7 +21,8 @@
 		F519567C27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* EventsWidget.intentdefinition */; };
 		F519567D27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* EventsWidget.intentdefinition */; };
 		F519568027EC6644008FC9E0 /* EventsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F519566F27EC6643008FC9E0 /* EventsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F519568527EC68BF008FC9E0 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
+		F5431E7827F3495E00FE998B /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
+		F5431E7927F349C600FE998B /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 		F54CE7E527EC8BEE00D4F5D2 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */; };
 /* End PBXBuildFile section */
 
@@ -298,7 +298,7 @@
 			files = (
 				F519565D27EC64FC008FC9E0 /* ContentView.swift in Sources */,
 				F519565B27EC64FC008FC9E0 /* EventsWidgetApp.swift in Sources */,
-				F519566A27EC6599008FC9E0 /* EventStore.swift in Sources */,
+				F5431E7827F3495E00FE998B /* EventStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +308,7 @@
 			files = (
 				F519567727EC6643008FC9E0 /* EventsWidget.swift in Sources */,
 				F519567C27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */,
-				F519568527EC68BF008FC9E0 /* EventStore.swift in Sources */,
+				F5431E7927F349C600FE998B /* EventStore.swift in Sources */,
 				F54CE7E527EC8BEE00D4F5D2 /* Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,8 +441,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EventsWidget--iOS--Info.plist";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "EventsWidget uses your events to display them in a widget.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -472,8 +474,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EventsWidget--iOS--Info.plist";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "EventsWidget uses your events to display them in a widget.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -505,6 +509,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -531,6 +536,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -555,6 +561,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventsWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EventsWidget;
@@ -583,6 +590,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventsWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EventsWidget;

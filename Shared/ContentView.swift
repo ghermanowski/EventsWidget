@@ -8,15 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+	@EnvironmentObject private var eventStore: EventStore
+	
     var body: some View {
-		Button {
-			EventStore.shared.requestAccess()
-		} label: {
-			Text("Request Access")
-				.padding(8)
+		Group {
+			if eventStore.canAccessEvents {
+				Button(action: eventStore.addEvent) {
+					Text("Add Event")
+						.padding(8)
+				}
+			} else {
+				Button(action: eventStore.requestAccess) {
+					Text("Request Access")
+						.padding(8)
+				}
+			}
 		}
 		.buttonStyle(.borderedProminent)
-		.tint(.orange)
     }
 }
 
