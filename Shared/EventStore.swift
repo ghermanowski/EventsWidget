@@ -64,6 +64,11 @@ final class EventStore: ObservableObject {
 		}
 	}
 	
+	func calendars() -> [EKCalendar] {
+		ekEventStore.calendars(for: .event)
+			.sorted { $0.title.localizedStandardCompare($1.title) == .orderedAscending }
+	}
+	
 	func requestAccess() {
 		ekEventStore.requestAccess(to: .event) { granted, error in
 			guard error == nil else {
