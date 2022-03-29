@@ -57,7 +57,7 @@ struct EventsWidgetEntryView: View {
 	internal init(entry: Provider.Entry) {
 		self.entry = entry
 		self.canAccessEvents = EventStore.shared.canAccessEvents
-		self.events = EventStore.shared.events(for: entry.date)
+		self.events = Array(EventStore.shared.events(for: entry.date).prefix(2))
 	}
 	
 	@Environment(\.colorScheme) private var colourScheme
@@ -122,7 +122,7 @@ struct EventsWidget: Widget {
 		}
 		.configurationDisplayName("Today's Events")
 		.description("Your remaining events for today.")
-		.supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+		.supportedFamilies([.systemSmall, .systemMedium])
 	}
 }
 
