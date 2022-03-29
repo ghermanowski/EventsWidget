@@ -162,7 +162,7 @@
 			<key>INTypeDisplayNameID</key>
 			<string>7mzbu5</string>
 			<key>INTypeLastPropertyTag</key>
-			<integer>101</integer>
+			<integer>103</integer>
 			<key>INTypeName</key>
 			<string>EWCalendar</string>
 			<key>INTypeProperties</key>
@@ -216,20 +216,6 @@
 					<integer>4</integer>
 					<key>INTypePropertyType</key>
 					<string>SpeakableString</string>
-				</dict>
-				<dict>
-					<key>INTypePropertyDisplayName</key>
-					<string>Title</string>
-					<key>INTypePropertyDisplayNameID</key>
-					<string>3MNdz8</string>
-					<key>INTypePropertyDisplayPriority</key>
-					<integer>5</integer>
-					<key>INTypePropertyName</key>
-					<string>title</string>
-					<key>INTypePropertyTag</key>
-					<integer>101</integer>
-					<key>INTypePropertyType</key>
-					<string>String</string>
 				</dict>
 			</array>
 		</dict>
