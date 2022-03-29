@@ -133,8 +133,5 @@ struct EventsWidget_Previews: PreviewProvider {
 		
 		EventsWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
 			.previewContext(WidgetPreviewContext(family: .systemMedium))
-		
-		EventsWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-			.previewContext(WidgetPreviewContext(family: .systemLarge))
 	}
 }
