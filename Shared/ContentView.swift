@@ -11,21 +11,29 @@ struct ContentView: View {
 	@EnvironmentObject private var eventStore: EventStore
 	
     var body: some View {
-		Group {
-			if eventStore.canAccessEvents {
-				Button(action: eventStore.addEvent) {
-					Text("Add Event")
-						.padding(8)
-				}
-			} else {
-				Button(action: eventStore.requestAccess) {
-					Text("Request Access")
-						.padding(8)
+		NavigationView {
+			Group {
+				if eventStore.canAccessEvents {
+					VStack(alignment: .leading, spacing: 8) {
+						ForEach(eventStore.events(for: .now), id: \.eventIdentifier) { event in
+							EventItem(event)
+								.cornerRadius(14)
+						}
+					}
+					.toolbar {
+						ToolbarItem(placement: .navigationBarTrailing) {
+							Button("Add Event", action: eventStore.addEvent)
+								.buttonStyle(.borderedProminent)
+						}
+					}
+				} else {
+					Button("Request Access", action: eventStore.requestAccess)
+						.buttonStyle(.borderedProminent)
 				}
 			}
+			.navigationTitle("Events")
 		}
-		.buttonStyle(.borderedProminent)
-    }
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {

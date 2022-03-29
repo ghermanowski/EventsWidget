@@ -24,6 +24,9 @@
 		F5431E7827F3495E00FE998B /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 		F5431E7927F349C600FE998B /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 		F54CE7E527EC8BEE00D4F5D2 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */; };
+		F59FC0E327F366B3006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
+		F59FC0E427F366B3006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
+		F59FC0E527F36727006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,7 @@
 		F519567927EC6644008FC9E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F519567B27EC6644008FC9E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		F59FC0E227F366B3006F3948 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			children = (
 				F519564A27EC64FB008FC9E0 /* EventsWidgetApp.swift */,
 				F519564B27EC64FB008FC9E0 /* ContentView.swift */,
+				F59FC0E227F366B3006F3948 /* EventItem.swift */,
 				F519566827EC6599008FC9E0 /* EventStore.swift */,
 				F519564C27EC64FC008FC9E0 /* Assets.xcassets */,
 			);
@@ -287,6 +292,7 @@
 			files = (
 				F519565C27EC64FC008FC9E0 /* ContentView.swift in Sources */,
 				F519565A27EC64FC008FC9E0 /* EventsWidgetApp.swift in Sources */,
+				F59FC0E327F366B3006F3948 /* EventItem.swift in Sources */,
 				F519566927EC6599008FC9E0 /* EventStore.swift in Sources */,
 				F519567D27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */,
 			);
@@ -299,6 +305,7 @@
 				F519565D27EC64FC008FC9E0 /* ContentView.swift in Sources */,
 				F519565B27EC64FC008FC9E0 /* EventsWidgetApp.swift in Sources */,
 				F5431E7827F3495E00FE998B /* EventStore.swift in Sources */,
+				F59FC0E427F366B3006F3948 /* EventItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +315,7 @@
 			files = (
 				F519567727EC6643008FC9E0 /* EventsWidget.swift in Sources */,
 				F519567C27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */,
+				F59FC0E527F36727006F3948 /* EventItem.swift in Sources */,
 				F5431E7927F349C600FE998B /* EventStore.swift in Sources */,
 				F54CE7E527EC8BEE00D4F5D2 /* Placeholder.swift in Sources */,
 			);

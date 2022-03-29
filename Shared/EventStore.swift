@@ -17,18 +17,19 @@ final class EventStore: ObservableObject {
 		NotificationCenter.default.publisher(for: .EKEventStoreChanged)
 			.sink { notification in
 				guard let info = notification.userInfo else { return }
-
-				print("info", info)
-
+				
+				self.objectWillChange.send()
+				
+				print(Date.now, info)
+				
 				for (key, value) in info {
 					guard let keyString = key as? String,
 						  let intValue = value as? Int else { return }
-
+					
 					if intValue == 1 && keyString == "EKEventStoreCalendarDataChangedUserInfoKey" {
 						WidgetCenter.shared.reloadAllTimelines()
 					}
 				}
-
 			}
 			.store(in: &cancellables)
 	}

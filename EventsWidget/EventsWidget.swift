@@ -57,10 +57,10 @@ struct EventsWidgetEntryView: View {
 	internal init(entry: Provider.Entry) {
 		self.entry = entry
 		self.canAccessEvents = EventStore.shared.canAccessEvents
-		self.events = Array(EventStore.shared.events(for: entry.date).prefix(2))
+		self.events = EventStore.shared.events(for: entry.date)
 	}
 	
-	@Environment(\.colorScheme) private var colourScheme
+	@Environment(\.widgetFamily) private var widgetFamily
 	
 	var entry: Provider.Entry
 	let canAccessEvents: Bool
@@ -76,30 +76,26 @@ struct EventsWidgetEntryView: View {
 				VStack(alignment: .leading, spacing: 8) {
 					WidgetDate()
 					
-					LazyVGrid(columns: [GridItem()], spacing: 6) {
-						ForEach(events, id: \.eventIdentifier) { event in
-							let eventColour = Color(cgColor: event.calendar.cgColor)
-							
-							HStack {
-								Image(systemName: "star.fill")
-								
-								VStack(alignment: .leading) {
-									Text(event.title)
-										.font(.subheadline.weight(.medium))
-									
-									Text(event.startDate...event.endDate)
-										.font(.footnote.weight(.semibold))
-										.foregroundStyle(.secondary)
+					VStack(spacing: 6) {
+						let displayedEvents: [EKEvent] = {
+							let limit: Int? = {
+								switch widgetFamily {
+									case .systemSmall, .systemMedium: return 2
+									case .systemLarge: return 6
+									default: return nil
 								}
-								.padding(.vertical, 6)
-								
-								Spacer(minLength: .zero)
+							}()
+							
+							if let limit = limit {
+								return Array(events.prefix(limit))
+							} else {
+								return events
 							}
-							.foregroundColor(eventColour)
-							.blendMode(colourScheme == .light ? .plusDarker : .plusLighter)
-							.padding(.horizontal, 10)
-							.background(eventColour.opacity(0.125))
-							.clipShape(ContainerRelativeShape())
+						}()
+						
+						ForEach(displayedEvents, id: \.eventIdentifier) { event in
+							EventItem(event)
+								.clipShape(ContainerRelativeShape())
 						}
 					}
 					
@@ -122,7 +118,7 @@ struct EventsWidget: Widget {
 		}
 		.configurationDisplayName("Today's Events")
 		.description("Your remaining events for today.")
-		.supportedFamilies([.systemSmall, .systemMedium])
+		.supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
 	}
 }
 
@@ -133,5 +129,8 @@ struct EventsWidget_Previews: PreviewProvider {
 		
 		EventsWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
 			.previewContext(WidgetPreviewContext(family: .systemMedium))
+		
+		EventsWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+			.previewContext(WidgetPreviewContext(family: .systemLarge))
 	}
 }
