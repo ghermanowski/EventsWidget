@@ -57,51 +57,68 @@ struct EventsWidgetEntryView: View {
 	internal init(entry: Provider.Entry) {
 		self.entry = entry
 		self.canAccessEvents = EventStore.shared.canAccessEvents
-		self.events = EventStore.shared.events(for: entry.date)
 	}
 	
 	@Environment(\.widgetFamily) private var widgetFamily
 	
 	var entry: Provider.Entry
 	let canAccessEvents: Bool
-	let events: [EKEvent]
+	
+	var displayedEvents: [EKEvent] {
+		let events: [EKEvent] = {
+			let events = EventStore.shared.events(for: entry.date)
+			
+			let limit: Int? = {
+				switch widgetFamily {
+					case .systemSmall, .systemMedium: return 2
+					case .systemLarge: return 6
+					default: return nil
+				}
+			}()
+			
+			if let limit = limit {
+				return Array(events.prefix(limit))
+			} else {
+				return events
+			}
+		}()
+		
+		if entry.configuration.showAllCalendars == 1 {
+			return events
+		} else {
+			let calendarIDs = entry.configuration.calendars?.compactMap(\.identifier) ?? []
+			
+			return events
+				.filter { event in
+					calendarIDs.contains { $0 == event.calendar.calendarIdentifier }
+				}
+		}
+	}
 	
 	var body: some View {
 		Group {
 			if !canAccessEvents {
 				Placeholder("No Access to Events")
-			} else if events.isEmpty {
-				Placeholder("No more jobs!")
 			} else {
-				VStack(alignment: .leading, spacing: 8) {
-					WidgetDate()
-					
-					VStack(spacing: 6) {
-						let displayedEvents: [EKEvent] = {
-							let limit: Int? = {
-								switch widgetFamily {
-									case .systemSmall, .systemMedium: return 2
-									case .systemLarge: return 6
-									default: return nil
-								}
-							}()
-							
-							if let limit = limit {
-								return Array(events.prefix(limit))
-							} else {
-								return events
-							}
-						}()
+				let events = displayedEvents
+				
+				if events.isEmpty {
+					Placeholder("No more jobs!")
+				} else {
+					VStack(alignment: .leading, spacing: 8) {
+						WidgetDate()
 						
-						ForEach(displayedEvents, id: \.eventIdentifier) { event in
-							EventItem(event)
-								.clipShape(ContainerRelativeShape())
+						VStack(spacing: 6) {
+							ForEach(events, id: \.eventIdentifier) { event in
+								EventItem(event)
+									.clipShape(ContainerRelativeShape())
+							}
 						}
+						
+						Spacer()
 					}
-					
-					Spacer()
+					.padding([.top, .horizontal], 12)
 				}
-				.padding([.top, .horizontal], 12)
 			}
 		}
 		.background(Color(uiColor: .systemBackground))
@@ -113,7 +130,9 @@ struct EventsWidget: Widget {
 	let kind: String = "EventsWidget"
 	
 	var body: some WidgetConfiguration {
-		IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+		IntentConfiguration(kind: kind,
+							intent: ConfigurationIntent.self,
+							provider: Provider()) { entry in
 			EventsWidgetEntryView(entry: entry)
 		}
 		.configurationDisplayName("Today's Events")

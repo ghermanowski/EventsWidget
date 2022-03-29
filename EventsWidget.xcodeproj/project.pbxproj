@@ -18,8 +18,8 @@
 		F519567427EC6643008FC9E0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F519567327EC6643008FC9E0 /* SwiftUI.framework */; };
 		F519567727EC6643008FC9E0 /* EventsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519567627EC6643008FC9E0 /* EventsWidget.swift */; };
 		F519567A27EC6644008FC9E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F519567927EC6644008FC9E0 /* Assets.xcassets */; };
-		F519567C27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* EventsWidget.intentdefinition */; };
-		F519567D27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* EventsWidget.intentdefinition */; };
+		F519567C27EC6644008FC9E0 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
+		F519567D27EC6644008FC9E0 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
 		F519568027EC6644008FC9E0 /* EventsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F519566F27EC6643008FC9E0 /* EventsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F5431E7827F3495E00FE998B /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 		F5431E7927F349C600FE998B /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
@@ -27,6 +27,12 @@
 		F59FC0E327F366B3006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
 		F59FC0E427F366B3006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
 		F59FC0E527F36727006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
+		F59FC0EC27F36BFA006F3948 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59FC0EB27F36BFA006F3948 /* Intents.framework */; };
+		F59FC0EF27F36BFA006F3948 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0EE27F36BFA006F3948 /* IntentHandler.swift */; };
+		F59FC10427F36BFA006F3948 /* ConfigurationIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F59FC0EA27F36BFA006F3948 /* ConfigurationIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F59FC10B27F36CA1006F3948 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
+		F59FC10C27F36D05006F3948 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
+		F5CB416227F37D28005BEA6F /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = F519566E27EC6643008FC9E0;
 			remoteInfo = EventsWidgetExtension;
+		};
+		F59FC10227F36BFA006F3948 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F519564527EC64FA008FC9E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F59FC0E927F36BFA006F3948;
+			remoteInfo = EventsWidgetIntent;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,6 +60,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				F519568027EC6644008FC9E0 /* EventsWidgetExtension.appex in Embed App Extensions */,
+				F59FC10427F36BFA006F3948 /* ConfigurationIntent.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,11 +79,15 @@
 		F519567127EC6643008FC9E0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F519567327EC6643008FC9E0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		F519567627EC6643008FC9E0 /* EventsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsWidget.swift; sourceTree = "<group>"; };
-		F519567827EC6643008FC9E0 /* EventsWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = EventsWidget.intentdefinition; sourceTree = "<group>"; };
+		F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ConfigurationIntent.intentdefinition; sourceTree = "<group>"; };
 		F519567927EC6644008FC9E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F519567B27EC6644008FC9E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		F59FC0E227F366B3006F3948 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
+		F59FC0EA27F36BFA006F3948 /* ConfigurationIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ConfigurationIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59FC0EB27F36BFA006F3948 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		F59FC0EE27F36BFA006F3948 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		F59FC0F027F36BFA006F3948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +114,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F59FC0E727F36BFA006F3948 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F59FC0EC27F36BFA006F3948 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,6 +131,7 @@
 				F519564927EC64FB008FC9E0 /* Shared */,
 				F519565827EC64FC008FC9E0 /* macOS */,
 				F519567527EC6643008FC9E0 /* EventsWidget */,
+				F59FC0ED27F36BFA006F3948 /* ConfigurationIntent */,
 				F519567027EC6643008FC9E0 /* Frameworks */,
 				F519565227EC64FC008FC9E0 /* Products */,
 			);
@@ -128,6 +155,7 @@
 				F519565127EC64FC008FC9E0 /* EventsWidget.app */,
 				F519565727EC64FC008FC9E0 /* EventsWidget.app */,
 				F519566F27EC6643008FC9E0 /* EventsWidgetExtension.appex */,
+				F59FC0EA27F36BFA006F3948 /* ConfigurationIntent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +173,7 @@
 			children = (
 				F519567127EC6643008FC9E0 /* WidgetKit.framework */,
 				F519567327EC6643008FC9E0 /* SwiftUI.framework */,
+				F59FC0EB27F36BFA006F3948 /* Intents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,11 +183,20 @@
 			children = (
 				F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */,
 				F519567627EC6643008FC9E0 /* EventsWidget.swift */,
-				F519567827EC6643008FC9E0 /* EventsWidget.intentdefinition */,
+				F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */,
 				F519567927EC6644008FC9E0 /* Assets.xcassets */,
 				F519567B27EC6644008FC9E0 /* Info.plist */,
 			);
 			path = EventsWidget;
+			sourceTree = "<group>";
+		};
+		F59FC0ED27F36BFA006F3948 /* ConfigurationIntent */ = {
+			isa = PBXGroup;
+			children = (
+				F59FC0EE27F36BFA006F3948 /* IntentHandler.swift */,
+				F59FC0F027F36BFA006F3948 /* Info.plist */,
+			);
+			path = ConfigurationIntent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +215,7 @@
 			);
 			dependencies = (
 				F519567F27EC6644008FC9E0 /* PBXTargetDependency */,
+				F59FC10327F36BFA006F3948 /* PBXTargetDependency */,
 			);
 			name = "EventsWidget (iOS)";
 			productName = "EventsWidget (iOS)";
@@ -217,6 +256,23 @@
 			productReference = F519566F27EC6643008FC9E0 /* EventsWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		F59FC0E927F36BFA006F3948 /* ConfigurationIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F59FC10827F36BFA006F3948 /* Build configuration list for PBXNativeTarget "ConfigurationIntent" */;
+			buildPhases = (
+				F59FC0E627F36BFA006F3948 /* Sources */,
+				F59FC0E727F36BFA006F3948 /* Frameworks */,
+				F59FC0E827F36BFA006F3948 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConfigurationIntent;
+			productName = EventsWidgetIntent;
+			productReference = F59FC0EA27F36BFA006F3948 /* ConfigurationIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -234,6 +290,9 @@
 						CreatedOnToolsVersion = 13.3;
 					};
 					F519566E27EC6643008FC9E0 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					F59FC0E927F36BFA006F3948 = {
 						CreatedOnToolsVersion = 13.3;
 					};
 				};
@@ -254,6 +313,7 @@
 				F519565027EC64FC008FC9E0 /* EventsWidget (iOS) */,
 				F519565627EC64FC008FC9E0 /* EventsWidget (macOS) */,
 				F519566E27EC6643008FC9E0 /* EventsWidgetExtension */,
+				F59FC0E927F36BFA006F3948 /* ConfigurationIntent */,
 			);
 		};
 /* End PBXProject section */
@@ -283,6 +343,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F59FC0E827F36BFA006F3948 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -294,7 +361,7 @@
 				F519565A27EC64FC008FC9E0 /* EventsWidgetApp.swift in Sources */,
 				F59FC0E327F366B3006F3948 /* EventItem.swift in Sources */,
 				F519566927EC6599008FC9E0 /* EventStore.swift in Sources */,
-				F519567D27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */,
+				F519567D27EC6644008FC9E0 /* ConfigurationIntent.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F519565D27EC64FC008FC9E0 /* ContentView.swift in Sources */,
+				F5CB416227F37D28005BEA6F /* ConfigurationIntent.intentdefinition in Sources */,
 				F519565B27EC64FC008FC9E0 /* EventsWidgetApp.swift in Sources */,
 				F5431E7827F3495E00FE998B /* EventStore.swift in Sources */,
 				F59FC0E427F366B3006F3948 /* EventItem.swift in Sources */,
@@ -314,10 +382,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F519567727EC6643008FC9E0 /* EventsWidget.swift in Sources */,
-				F519567C27EC6644008FC9E0 /* EventsWidget.intentdefinition in Sources */,
+				F519567C27EC6644008FC9E0 /* ConfigurationIntent.intentdefinition in Sources */,
 				F59FC0E527F36727006F3948 /* EventItem.swift in Sources */,
 				F5431E7927F349C600FE998B /* EventStore.swift in Sources */,
 				F54CE7E527EC8BEE00D4F5D2 /* Placeholder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F59FC0E627F36BFA006F3948 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F59FC0EF27F36BFA006F3948 /* IntentHandler.swift in Sources */,
+				F59FC10B27F36CA1006F3948 /* ConfigurationIntent.intentdefinition in Sources */,
+				F59FC10C27F36D05006F3948 /* EventStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +406,11 @@
 			isa = PBXTargetDependency;
 			target = F519566E27EC6643008FC9E0 /* EventsWidgetExtension */;
 			targetProxy = F519567E27EC6644008FC9E0 /* PBXContainerItemProxy */;
+		};
+		F59FC10327F36BFA006F3948 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F59FC0E927F36BFA006F3948 /* ConfigurationIntent */;
+			targetProxy = F59FC10227F36BFA006F3948 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -520,6 +603,7 @@
 				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EventsWidget--macOS--Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -547,6 +631,7 @@
 				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "EventsWidget--macOS--Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -621,6 +706,61 @@
 			};
 			name = Release;
 		};
+		F59FC10927F36BFA006F3948 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConfigurationIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ConfigurationIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.EventsWidget.ConfigurationIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F59FC10A27F36BFA006F3948 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConfigurationIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ConfigurationIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.EventsWidget.ConfigurationIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -656,6 +796,15 @@
 			buildConfigurations = (
 				F519568227EC6644008FC9E0 /* Debug */,
 				F519568327EC6644008FC9E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F59FC10827F36BFA006F3948 /* Build configuration list for PBXNativeTarget "ConfigurationIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F59FC10927F36BFA006F3948 /* Debug */,
+				F59FC10A27F36BFA006F3948 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
