@@ -22,13 +22,19 @@ struct ContentView: View {
 					}
 					.toolbar {
 						ToolbarItem(placement: .navigationBarTrailing) {
-							Button("Add Event", action: eventStore.addEvent)
-								.buttonStyle(.borderedProminent)
+							Button("Add Event") {
+								eventStore.addEvent()
+							}
+							.buttonStyle(.borderedProminent)
 						}
 					}
 				} else {
-					Button("Request Access", action: eventStore.requestAccess)
-						.buttonStyle(.borderedProminent)
+					Button("Request Access") {
+						Task {
+							await eventStore.requestAccess()
+						}
+					}
+					.buttonStyle(.borderedProminent)
 				}
 			}
 			.navigationTitle("Events")

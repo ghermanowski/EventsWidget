@@ -36,7 +36,7 @@ final class EventStore: ObservableObject {
 
 	private var cancellables = Set<AnyCancellable>()
 	
-	private(set) var canAccessEvents = EKEventStore.authorizationStatus(for: .event) == .authorized
+	@Published private(set) var canAccessEvents = EKEventStore.authorizationStatus(for: .event) == .authorized
 	
 	private var ekEventStore = EKEventStore()
 	
@@ -69,15 +69,16 @@ final class EventStore: ObservableObject {
 			.sorted { $0.title.localizedStandardCompare($1.title) == .orderedAscending }
 	}
 	
-	func requestAccess() {
-		ekEventStore.requestAccess(to: .event) { granted, error in
-			guard error == nil else {
-				print(error!)
-				return
-			}
+	func requestAccess() async {
+		do {
+			let canAccessEvents = try await ekEventStore.requestAccess(to: .event)
 			
-			self.canAccessEvents = granted
-			self.ekEventStore = EKEventStore()
+			DispatchQueue.main.sync {
+				self.canAccessEvents = canAccessEvents
+				ekEventStore = EKEventStore()
+			}
+		} catch {
+			print(error)
 		}
 	}
 }
