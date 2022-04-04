@@ -65,33 +65,29 @@ struct EventsWidgetEntryView: View {
 	let canAccessEvents: Bool
 	
 	var displayedEvents: [EKEvent] {
-		let events: [EKEvent] = {
-			let events = EventStore.shared.events(for: entry.date)
-			
-			let limit: Int? = {
-				switch widgetFamily {
-					case .systemSmall, .systemMedium: return 2
-					case .systemLarge: return 6
-					default: return nil
-				}
-			}()
-			
-			if let limit = limit {
-				return Array(events.prefix(limit))
-			} else {
-				return events
-			}
-		}()
+		var events = EventStore.shared.events(for: entry.date)
 		
-		if entry.configuration.showAllCalendars == 1 {
-			return events
-		} else {
+		if entry.configuration.showAllCalendars != 1 {
 			let calendarIDs = entry.configuration.calendars?.compactMap(\.identifier) ?? []
 			
-			return events
+			events = events
 				.filter { event in
 					calendarIDs.contains { $0 == event.calendar.calendarIdentifier }
 				}
+		}
+		
+		let limit: Int? = {
+			switch widgetFamily {
+				case .systemSmall, .systemMedium: return 2
+				case .systemLarge: return 6
+				default: return nil
+			}
+		}()
+		
+		if let limit = limit {
+			return Array(events.prefix(limit))
+		} else {
+			return events
 		}
 	}
 	
