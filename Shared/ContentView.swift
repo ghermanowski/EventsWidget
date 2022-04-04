@@ -20,6 +20,7 @@ struct ContentView: View {
 								.cornerRadius(14)
 						}
 					}
+					.padding(.horizontal)
 					.toolbar {
 						ToolbarItem(placement: .navigationBarTrailing) {
 							Button("Add Event") {

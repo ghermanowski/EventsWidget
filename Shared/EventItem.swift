@@ -38,7 +38,10 @@ struct EventItem: View {
 		.foregroundColor(eventColour)
 		.blendMode(colourScheme == .light ? .plusDarker : .plusLighter)
 		.padding(.horizontal, 10)
-		.background(eventColour.opacity(0.125))
+		.background {
+			eventColour.opacity(0.125)
+				.blendMode(colourScheme == .light ? .normal : .hardLight)
+		}
     }
 }
 
