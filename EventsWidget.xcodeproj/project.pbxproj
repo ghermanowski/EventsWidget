@@ -81,6 +81,8 @@
 		F59FC0EB27F36BFA006F3948 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		F59FC0EE27F36BFA006F3948 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		F59FC0F027F36BFA006F3948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5B6E4E727FCCFC500D624BE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F5B6E4E827FCCFD300D624BE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,11 +116,13 @@
 		F519564427EC64FA008FC9E0 = {
 			isa = PBXGroup;
 			children = (
+				F5B6E4E727FCCFC500D624BE /* README.md */,
 				F519564927EC64FB008FC9E0 /* Shared */,
 				F519567527EC6643008FC9E0 /* EventsWidget */,
 				F59FC0ED27F36BFA006F3948 /* ConfigurationIntent */,
 				F5B6E4E627FCCCF900D624BE /* iOS */,
 				F519567027EC6643008FC9E0 /* Frameworks */,
+				F5B6E4E827FCCFD300D624BE /* LICENSE */,
 				F519565227EC64FC008FC9E0 /* Products */,
 			);
 			sourceTree = "<group>";
