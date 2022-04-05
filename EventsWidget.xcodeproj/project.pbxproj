@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F519565A27EC64FC008FC9E0 /* EventsWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519564A27EC64FB008FC9E0 /* EventsWidgetApp.swift */; };
-		F519565B27EC64FC008FC9E0 /* EventsWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519564A27EC64FB008FC9E0 /* EventsWidgetApp.swift */; };
 		F519565C27EC64FC008FC9E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519564B27EC64FB008FC9E0 /* ContentView.swift */; };
-		F519565D27EC64FC008FC9E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519564B27EC64FB008FC9E0 /* ContentView.swift */; };
 		F519565E27EC64FC008FC9E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F519564C27EC64FC008FC9E0 /* Assets.xcassets */; };
-		F519565F27EC64FC008FC9E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F519564C27EC64FC008FC9E0 /* Assets.xcassets */; };
 		F519566927EC6599008FC9E0 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 		F519567227EC6643008FC9E0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F519567127EC6643008FC9E0 /* WidgetKit.framework */; };
 		F519567427EC6643008FC9E0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F519567327EC6643008FC9E0 /* SwiftUI.framework */; };
@@ -21,18 +18,15 @@
 		F519567C27EC6644008FC9E0 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
 		F519567D27EC6644008FC9E0 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
 		F519568027EC6644008FC9E0 /* EventsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F519566F27EC6643008FC9E0 /* EventsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F5431E7827F3495E00FE998B /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 		F5431E7927F349C600FE998B /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 		F54CE7E527EC8BEE00D4F5D2 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */; };
 		F59FC0E327F366B3006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
-		F59FC0E427F366B3006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
 		F59FC0E527F36727006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
 		F59FC0EC27F36BFA006F3948 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59FC0EB27F36BFA006F3948 /* Intents.framework */; };
 		F59FC0EF27F36BFA006F3948 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0EE27F36BFA006F3948 /* IntentHandler.swift */; };
 		F59FC10427F36BFA006F3948 /* ConfigurationIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F59FC0EA27F36BFA006F3948 /* ConfigurationIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F59FC10B27F36CA1006F3948 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
 		F59FC10C27F36D05006F3948 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
-		F5CB416227F37D28005BEA6F /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +66,6 @@
 		F519564B27EC64FB008FC9E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F519564C27EC64FC008FC9E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F519565127EC64FC008FC9E0 /* EventsWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F519565727EC64FC008FC9E0 /* EventsWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F519565927EC64FC008FC9E0 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F519566827EC6599008FC9E0 /* EventStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
 		F519566F27EC6643008FC9E0 /* EventsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EventsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F519567127EC6643008FC9E0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -83,8 +75,7 @@
 		F519567927EC6644008FC9E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F519567B27EC6644008FC9E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
-		F578B23F27F38389005D6C1F /* EventsWidget--iOS--Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EventsWidget--iOS--Info.plist"; sourceTree = "<group>"; };
-		F578B24127F3839F005D6C1F /* EventsWidget--macOS--Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EventsWidget--macOS--Info.plist"; sourceTree = "<group>"; };
+		F578B23F27F38389005D6C1F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F59FC0E227F366B3006F3948 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
 		F59FC0EA27F36BFA006F3948 /* ConfigurationIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ConfigurationIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F59FC0EB27F36BFA006F3948 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
@@ -94,13 +85,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		F519564E27EC64FC008FC9E0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F519565427EC64FC008FC9E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,12 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				F519564927EC64FB008FC9E0 /* Shared */,
-				F519565827EC64FC008FC9E0 /* macOS */,
 				F519567527EC6643008FC9E0 /* EventsWidget */,
 				F59FC0ED27F36BFA006F3948 /* ConfigurationIntent */,
+				F5B6E4E627FCCCF900D624BE /* iOS */,
 				F519567027EC6643008FC9E0 /* Frameworks */,
-				F578B24127F3839F005D6C1F /* EventsWidget--macOS--Info.plist */,
-				F578B23F27F38389005D6C1F /* EventsWidget--iOS--Info.plist */,
 				F519565227EC64FC008FC9E0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -157,19 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				F519565127EC64FC008FC9E0 /* EventsWidget.app */,
-				F519565727EC64FC008FC9E0 /* EventsWidget.app */,
 				F519566F27EC6643008FC9E0 /* EventsWidgetExtension.appex */,
 				F59FC0EA27F36BFA006F3948 /* ConfigurationIntent.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		F519565827EC64FC008FC9E0 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				F519565927EC64FC008FC9E0 /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		F519567027EC6643008FC9E0 /* Frameworks */ = {
@@ -203,6 +176,14 @@
 			path = ConfigurationIntent;
 			sourceTree = "<group>";
 		};
+		F5B6E4E627FCCCF900D624BE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F578B23F27F38389005D6C1F /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,23 +205,6 @@
 			name = "EventsWidget (iOS)";
 			productName = "EventsWidget (iOS)";
 			productReference = F519565127EC64FC008FC9E0 /* EventsWidget.app */;
-			productType = "com.apple.product-type.application";
-		};
-		F519565627EC64FC008FC9E0 /* EventsWidget (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F519566527EC64FC008FC9E0 /* Build configuration list for PBXNativeTarget "EventsWidget (macOS)" */;
-			buildPhases = (
-				F519565327EC64FC008FC9E0 /* Sources */,
-				F519565427EC64FC008FC9E0 /* Frameworks */,
-				F519565527EC64FC008FC9E0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "EventsWidget (macOS)";
-			productName = "EventsWidget (macOS)";
-			productReference = F519565727EC64FC008FC9E0 /* EventsWidget.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F519566E27EC6643008FC9E0 /* EventsWidgetExtension */ = {
@@ -290,9 +254,6 @@
 					F519565027EC64FC008FC9E0 = {
 						CreatedOnToolsVersion = 13.3;
 					};
-					F519565627EC64FC008FC9E0 = {
-						CreatedOnToolsVersion = 13.3;
-					};
 					F519566E27EC6643008FC9E0 = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -315,7 +276,6 @@
 			projectRoot = "";
 			targets = (
 				F519565027EC64FC008FC9E0 /* EventsWidget (iOS) */,
-				F519565627EC64FC008FC9E0 /* EventsWidget (macOS) */,
 				F519566E27EC6643008FC9E0 /* EventsWidgetExtension */,
 				F59FC0E927F36BFA006F3948 /* ConfigurationIntent */,
 			);
@@ -328,14 +288,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F519565E27EC64FC008FC9E0 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F519565527EC64FC008FC9E0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F519565F27EC64FC008FC9E0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,18 +318,6 @@
 				F59FC0E327F366B3006F3948 /* EventItem.swift in Sources */,
 				F519566927EC6599008FC9E0 /* EventStore.swift in Sources */,
 				F519567D27EC6644008FC9E0 /* ConfigurationIntent.intentdefinition in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F519565327EC64FC008FC9E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F519565D27EC64FC008FC9E0 /* ContentView.swift in Sources */,
-				F5CB416227F37D28005BEA6F /* ConfigurationIntent.intentdefinition in Sources */,
-				F519565B27EC64FC008FC9E0 /* EventsWidgetApp.swift in Sources */,
-				F5431E7827F3495E00FE998B /* EventStore.swift in Sources */,
-				F59FC0E427F366B3006F3948 /* EventItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +479,7 @@
 				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "EventsWidget--iOS--Info.plist";
+				INFOPLIST_FILE = iOS/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "EventsWidget uses your events to display them in a widget.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -572,7 +512,7 @@
 				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "EventsWidget--iOS--Info.plist";
+				INFOPLIST_FILE = iOS/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "EventsWidget uses your events to display them in a widget.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -592,62 +532,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		F519566627EC64FC008FC9E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JB3QK77KA5;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "EventsWidget--macOS--Info.plist";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.EventsWidget;
-				PRODUCT_NAME = EventsWidget;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		F519566727EC64FC008FC9E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JB3QK77KA5;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "EventsWidget--macOS--Info.plist";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.EventsWidget;
-				PRODUCT_NAME = EventsWidget;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -782,15 +666,6 @@
 			buildConfigurations = (
 				F519566327EC64FC008FC9E0 /* Debug */,
 				F519566427EC64FC008FC9E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F519566527EC64FC008FC9E0 /* Build configuration list for PBXNativeTarget "EventsWidget (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F519566627EC64FC008FC9E0 /* Debug */,
-				F519566727EC64FC008FC9E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
