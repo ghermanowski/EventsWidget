@@ -11,7 +11,7 @@ In this tutorial you will learn how to allow your users to configure their widge
 
 ### 0 — Create a Widget Extension
 
-*If you do not have a widget yet, you can create include the configuration while creating the widget extension, which allows you to skip over step 2.*
+*If you do not have a widget yet, you can create include the configuration while creating the widget extension, which allows you to skip step 2.*
 
 <img width="1680" alt="Creating a new widget extension" src="https://user-images.githubusercontent.com/57409167/161965775-8961ca00-6784-41f2-868b-18b4eaf11a99.png">
 <img width="1680" alt="Provide a name for your widget" src="https://user-images.githubusercontent.com/57409167/161965940-ff418982-ef49-470e-87a6-8c0adee488d1.png">
