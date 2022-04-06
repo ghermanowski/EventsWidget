@@ -83,8 +83,10 @@ Replace StaticConfiguration with IntentConfiguration in the widget struct and fi
 
 Run the widget extension — not the intent — to test if the configuration appears correctly in the simulator.
 
-![After pressing on the widget](https://user-images.githubusercontent.com/57409167/161968416-3201e058-b124-47a9-bdd9-4188c005607d.png)
-![Editing the widget's configuration](https://user-images.githubusercontent.com/57409167/161968431-85606680-4a0c-4250-b9a7-fa60e057ec01.png)
+<div>
+  <img width="300" alt="After pressing on the widget" src="https://user-images.githubusercontent.com/57409167/161968416-3201e058-b124-47a9-bdd9-4188c005607d.png">
+  <img width="300" alt="Editing the widget's configurationt" src="https://user-images.githubusercontent.com/57409167/161968431-85606680-4a0c-4250-b9a7-fa60e057ec01.png">
+</div>
 
 ### 8 — Use the Configuration Info
 
@@ -126,8 +128,10 @@ In your widget entry view, you will need to change the type to the dynamic value
 
 And that's it. The options should now be available in your widget's configuration when you run it in the simulator.
 
-![Editing the widget](https://user-images.githubusercontent.com/57409167/161970110-d3899b56-6f8b-4d8e-891f-ca7604429ddf.png)
-![Selecting from the dynamic options](https://user-images.githubusercontent.com/57409167/161970122-02c5aa7f-d4d8-4413-972c-872562451e4b.png)
+<div>
+  <img width="300" alt="Editing the widget" src="https://user-images.githubusercontent.com/57409167/161970110-d3899b56-6f8b-4d8e-891f-ca7604429ddf.png">
+  <img width="300" alt="Selecting from the dynamic options" src="https://user-images.githubusercontent.com/57409167/161970122-02c5aa7f-d4d8-4413-972c-872562451e4b.png">
+</div>
 
 ### Conclusion
 
