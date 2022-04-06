@@ -51,7 +51,7 @@ You can also create custom types that you use in your widget.
 <img width="1680" alt="Creating a custom type" src="https://user-images.githubusercontent.com/57409167/161966719-9c860472-bed4-4221-a36e-d7c6ab2fed00.png">
 <img width="1680" alt="Configuring the options" src="https://user-images.githubusercontent.com/57409167/161966791-a883a78e-8add-410c-bbfe-a551c438c19d.png">
 
-In [step 9](#9-—-dynamic-options) we will add dynamic options provided by your app.
+In [step 9](#9--dynamic-options) we will add dynamic options provided by your app.
 
 You can also hide options conditionally by setting a parent parameter for them.
 
