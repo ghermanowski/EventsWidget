@@ -18,7 +18,7 @@ In this tutorial you will learn how to allow your users to configure their widge
 
 ### 1 — Add a Configuration Intent
 
-To allow configuration of your widgets, you need to add a new target to your project. Choose the template Intents Extension.
+To allow configuration of your widgets, you need to add a new target to your project. Choose the template "Intents Extension".
 
 <img width="1680" alt="Adding a configuration intent" src="https://user-images.githubusercontent.com/57409167/161966090-5dcee556-91d3-4b64-97f5-98d5e1fc1c97.png">
 
@@ -63,7 +63,7 @@ Add a constant to the entry.
 
 ### 5 — Update Provider
 
-Change its type to IntentTimelineProvider.
+Change its type to `IntentTimelineProvider`.
 
 <img width="1680" alt="Replacing the provider type" src="https://user-images.githubusercontent.com/57409167/161968025-dae45419-a209-4ae4-b961-453dfc31f250.png">
 
@@ -75,7 +75,7 @@ Next, pass the configuration parameter to the entry initialisers. In the `placeh
 
 ### 6 — Update Widget
 
-Replace StaticConfiguration with IntentConfiguration in the widget struct and fill in the parameters like this:
+Replace `StaticConfiguration` with `IntentConfiguration` in the widget struct and fill in the parameters like this:
 
 <img width="1680" alt="Completed Widget" src="https://user-images.githubusercontent.com/57409167/161968283-af4d2839-409d-4e32-9d26-5d65cbc5ece7.png">
 
@@ -92,15 +92,15 @@ Run the widget extension — not the intent — to test if the configuration app
 
 Now you can use the values inside the entry view of the widget. 
 
-*Note that any boolean values from your configuration will be represented as NSNumbers. 0 is false and 1 is true.*
+*Note that any boolean values from your configuration will be represented as `NSNumbers`. 0 is false and 1 is true.*
 
 <img width="1680" alt="Using the configuration info" src="https://user-images.githubusercontent.com/57409167/161969551-f45b6aef-3f2c-45f7-bbbc-cab273c95b7d.png">
 
 ### 9 — Dynamic Options
 
-Adding options that are provided dynamically by your app is possible as well. Let's replace the enum Colour with a new type DynamicColour and select "Options are provided dynamically".
+Adding options that are provided dynamically by your app is possible as well. Let's replace our enum `Colour` with a new type `DynamicColour` and select "Options are provided dynamically".
 
-__Screenshot__ 
+<img width="1680" alt="Replacing static options" src="https://user-images.githubusercontent.com/57409167/161974160-9bff68ab-3c2c-48a4-8cff-df7d3271cb34.png">
 
 ### 10 — Provide Dynamic Options
 
