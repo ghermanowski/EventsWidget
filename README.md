@@ -7,7 +7,7 @@ Created at Apple Developer Academy Napoli
 
 ## Tutorial: How to Create Configurable Widgets
 
-In this tutorial you will learn how to allow your users to configure their widgets. I will show you how to add configuration to an alredy existing widget in your app.
+In this tutorial you will learn how to allow your users to configure their widgets. I will show you how to add configuration to an already existing widget in your app.
 
 ### 0 — Create a Widget Extension
 
@@ -38,7 +38,7 @@ Inside the the intent definition, add a new intent for the configuration of your
 
 <img width="1680" alt="Adding a new intent" src="https://user-images.githubusercontent.com/57409167/161966457-c8893a60-5997-4e94-afd7-6ea99de52245.png">
 
-In the first section, click the checkbox "Intent is elligible for widgets" and deselect the others as we do not need them.
+In the first section, click the checkbox "Intent is eligible for widgets" and deselect the others as we do not need them.
 
 <img width="1680" alt="Configuring the configuration" src="https://user-images.githubusercontent.com/57409167/161966523-ef7909b3-f3df-4dd1-b3d7-a18a76ccaca5.png">
 
@@ -85,7 +85,7 @@ Run the widget extension — not the intent — to test if the configuration app
 
 <div>
   <img width="300" alt="After pressing on the widget" src="https://user-images.githubusercontent.com/57409167/161968416-3201e058-b124-47a9-bdd9-4188c005607d.png">
-  <img width="300" alt="Editing the widget's configurationt" src="https://user-images.githubusercontent.com/57409167/161968431-85606680-4a0c-4250-b9a7-fa60e057ec01.png">
+  <img width="300" alt="Editing the widget's configuration" src="https://user-images.githubusercontent.com/57409167/161968431-85606680-4a0c-4250-b9a7-fa60e057ec01.png">
 </div>
 
 ### 8 — Use the Configuration Info
