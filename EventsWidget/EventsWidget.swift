@@ -67,15 +67,15 @@ struct EventsWidgetEntryView: View {
 	var displayedEvents: [EKEvent] {
 		var events = EventStore.shared.events(for: entry.date)
 		
-		if entry.configuration.showAllCalendars != 1 {
-			let calendarIDs = entry.configuration.calendars?.compactMap(\.identifier) ?? []
-			
+		if entry.configuration.showAllCalendars != 1,
+		   let calendarIDs = entry.configuration.calendars?.compactMap(\.identifier) {
 			events = events
 				.filter { event in
 					calendarIDs.contains { $0 == event.calendar.calendarIdentifier }
 				}
 		}
 		
+		// Ensures that the events fit the size of their widgets.
 		let limit: Int? = {
 			switch widgetFamily {
 				case .systemSmall, .systemMedium: return 2
