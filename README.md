@@ -1,8 +1,17 @@
 # EventsWidget
 
-A recreation of the iOS Calendar app's widget, that shows today's remaining events. Includes configuration to limit the events to only selected calendars.
+A recreation of the iOS Calendar app's widget, that shows today's remaining events using EventKit. Includes widget configuration to limit the events only to selected calendars.
+
+<div>
+  <img width="300" alt="EventsWidget next to Calendar's widger" src="https://user-images.githubusercontent.com/57409167/162175822-7066dd9e-762c-4381-82a6-6bb49372c6d7.png">
+  <img width="300" alt="Widget configuration" src="https://user-images.githubusercontent.com/57409167/162176048-68b33e7c-91df-4982-a138-c2f2bbcb8946.png">
+</div>
 
 Created at Apple Developer Academy Napoli
+
+### Technologies
+
+SwiftUI, WidgetKit, EventKit
 
 
 ## Tutorial: How to Create Configurable Widgets
