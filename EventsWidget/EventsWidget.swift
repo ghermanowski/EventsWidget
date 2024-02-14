@@ -98,10 +98,9 @@ struct EventsWidgetEntryView: View {
 					WidgetDate()
 						.padding(.bottom, 8)
 					
-					VStack(spacing: 6) {
+					VStack(spacing: 4) {
 						ForEach(events, id: \.eventIdentifier) { event in
 							EventItem(event)
-								.clipShape(.containerRelative)
 						}
 					}
 					

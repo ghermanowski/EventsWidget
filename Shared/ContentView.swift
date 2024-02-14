@@ -13,13 +13,13 @@ struct ContentView: View {
     var body: some View {
 		NavigationStack {
 			if eventStore.canAccessEvents {
-				VStack(alignment: .leading, spacing: 8) {
+				LazyVStack(alignment: .leading, spacing: 8) {
 					ForEach(eventStore.todaysEvents, id: \.eventIdentifier) { event in
 						EventItem(event)
-							.clipShape(.rect(cornerRadius: 14))
 					}
 				}
-				.padding(.horizontal)
+				.padding()
+				.containerShape(.rect(cornerRadius: 24))
 				.toolbar {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Add Event", action: eventStore.addEvent)
