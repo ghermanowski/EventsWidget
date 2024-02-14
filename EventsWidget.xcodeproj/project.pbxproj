@@ -17,14 +17,14 @@
 		F519567A27EC6644008FC9E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F519567927EC6644008FC9E0 /* Assets.xcassets */; };
 		F519567C27EC6644008FC9E0 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
 		F519567D27EC6644008FC9E0 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
-		F519568027EC6644008FC9E0 /* EventsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F519566F27EC6643008FC9E0 /* EventsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F519568027EC6644008FC9E0 /* EventsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F519566F27EC6643008FC9E0 /* EventsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F5431E7927F349C600FE998B /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 		F54CE7E527EC8BEE00D4F5D2 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE7E327EC8BC800D4F5D2 /* Placeholder.swift */; };
 		F59FC0E327F366B3006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
 		F59FC0E527F36727006F3948 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0E227F366B3006F3948 /* EventItem.swift */; };
 		F59FC0EC27F36BFA006F3948 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59FC0EB27F36BFA006F3948 /* Intents.framework */; };
 		F59FC0EF27F36BFA006F3948 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC0EE27F36BFA006F3948 /* IntentHandler.swift */; };
-		F59FC10427F36BFA006F3948 /* ConfigurationIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F59FC0EA27F36BFA006F3948 /* ConfigurationIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F59FC10427F36BFA006F3948 /* ConfigurationIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F59FC0EA27F36BFA006F3948 /* ConfigurationIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F59FC10B27F36CA1006F3948 /* ConfigurationIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F519567827EC6643008FC9E0 /* ConfigurationIntent.intentdefinition */; };
 		F59FC10C27F36D05006F3948 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519566827EC6599008FC9E0 /* EventStore.swift */; };
 /* End PBXBuildFile section */
@@ -47,16 +47,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F519568427EC6644008FC9E0 /* Embed App Extensions */ = {
+		F519568427EC6644008FC9E0 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F519568027EC6644008FC9E0 /* EventsWidgetExtension.appex in Embed App Extensions */,
-				F59FC10427F36BFA006F3948 /* ConfigurationIntent.appex in Embed App Extensions */,
+				F519568027EC6644008FC9E0 /* EventsWidgetExtension.appex in Embed Foundation Extensions */,
+				F59FC10427F36BFA006F3948 /* ConfigurationIntent.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -198,7 +198,7 @@
 				F519564D27EC64FC008FC9E0 /* Sources */,
 				F519564E27EC64FC008FC9E0 /* Frameworks */,
 				F519564F27EC64FC008FC9E0 /* Resources */,
-				F519568427EC6644008FC9E0 /* Embed App Extensions */,
+				F519568427EC6644008FC9E0 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -253,7 +253,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					F519565027EC64FC008FC9E0 = {
 						CreatedOnToolsVersion = 13.3;
@@ -367,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -396,9 +397,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -413,6 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -425,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -454,9 +459,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -465,6 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -484,19 +492,19 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				INFOPLIST_KEY_NSCalendarsUsageDescription = "EventsWidget uses your events to display them in a widget.";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.EventsWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hermanowski.EventsWidget;
 				PRODUCT_NAME = EventsWidget;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -517,19 +525,19 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				INFOPLIST_KEY_NSCalendarsUsageDescription = "EventsWidget uses your events to display them in a widget.";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.EventsWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hermanowski.EventsWidget;
 				PRODUCT_NAME = EventsWidget;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -551,14 +559,14 @@
 				INFOPLIST_FILE = EventsWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EventsWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.EventsWidget.EventsWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hermanowski.EventsWidget.EventsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -580,14 +588,14 @@
 				INFOPLIST_FILE = EventsWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EventsWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.EventsWidget.EventsWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hermanowski.EventsWidget.EventsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -608,14 +616,14 @@
 				INFOPLIST_FILE = ConfigurationIntent/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ConfigurationIntent;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.EventsWidget.ConfigurationIntent;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hermanowski.EventsWidget.ConfigurationIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -635,14 +643,14 @@
 				INFOPLIST_FILE = ConfigurationIntent/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ConfigurationIntent;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.gregor.EventsWidget.ConfigurationIntent;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hermanowski.EventsWidget.ConfigurationIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;

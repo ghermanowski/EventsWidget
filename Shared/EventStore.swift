@@ -10,16 +10,17 @@ import EventKit
 import Foundation
 import WidgetKit
 
-final class EventStore: ObservableObject {
+@Observable
+final class EventStore {
 	static let shared = EventStore()
 	
 	private init() {
+		todaysEvents = events(for: .now)
+		
 		// Automatically refreshes the object when a change occurs.
 		NotificationCenter.default.publisher(for: .EKEventStoreChanged)
-			.sink { notification in
-				guard let info = notification.userInfo else { return }
-				
-				self.objectWillChange.send()
+			.sink { [unowned self] in
+				guard let info = $0.userInfo else { return }
 				
 				print(Date.now, info)
 				
@@ -29,6 +30,7 @@ final class EventStore: ObservableObject {
 						  let intValue = value as? Int else { return }
 					
 					if intValue == 1 && keyString == "EKEventStoreCalendarDataChangedUserInfoKey" {
+						todaysEvents = events(for: .now)
 						WidgetCenter.shared.reloadAllTimelines()
 					}
 				}
@@ -37,19 +39,21 @@ final class EventStore: ObservableObject {
 	}
 	
 	private var cancellables = Set<AnyCancellable>()
-	
-	@Published private(set) var canAccessEvents = EKEventStore.authorizationStatus(for: .event) == .authorized
-	
 	private var ekEventStore = EKEventStore()
+	
+	private(set) var canAccessEvents = EKEventStore.authorizationStatus(for: .event) == .fullAccess
+	private(set) var todaysEvents = [EKEvent]()
 	
 	/// Fetches the events for the whole day.
 	/// - Parameter date: All events on the same day as this date will be fetched.
 	/// - Returns: Chronologically sorted events.
 	func events(for date: Date) -> [EKEvent] {
 		let startOfDay = Calendar.current.startOfDay(for: date)
-		let predicate = ekEventStore.predicateForEvents(withStart: startOfDay,
-														end: startOfDay.advanced(by: 86400),
-														calendars: nil)
+		let predicate = ekEventStore.predicateForEvents(
+			withStart: startOfDay,
+			end: startOfDay.advanced(by: 86400),
+			calendars: nil
+		)
 		return ekEventStore.events(matching: predicate)
 			.filter { $0.endDate > .now }
 	}
@@ -80,14 +84,9 @@ final class EventStore: ObservableObject {
 	/// Presents the permission request to the user.
 	func requestAccess() async {
 		do {
-			let canAccessEvents = try await ekEventStore.requestAccess(to: .event)
-			
-			DispatchQueue.main.sync {
-				self.canAccessEvents = canAccessEvents
-				// Overwriting the EKEventStore instance is only necessary here,
-				// because instances created before requesting access can not access the data.
-				ekEventStore = EKEventStore()
-			}
+			canAccessEvents = try await ekEventStore.requestFullAccessToEvents()
+			ekEventStore.reset()
+			todaysEvents = events(for: .now)
 		} catch {
 			print(error)
 		}

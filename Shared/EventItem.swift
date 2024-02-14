@@ -25,23 +25,19 @@ struct EventItem: View {
 			
 			VStack(alignment: .leading) {
 				Text(event.title)
-					.font(.subheadline.weight(.medium))
+					.font(.footnote.weight(.semibold))
 				
 				Text(event.startDate...event.endDate)
-					.font(.footnote.weight(.semibold))
-					.foregroundStyle(.secondary)
+					.font(.caption)
 			}
-			.padding(.vertical, 6)
+			.padding(.vertical, 4)
 			
 			Spacer(minLength: .zero)
 		}
-		.foregroundColor(eventColour)
+		.foregroundStyle(eventColour)
 		.blendMode(colourScheme == .light ? .plusDarker : .plusLighter)
 		.padding(.horizontal, 10)
-		.background {
-			eventColour.opacity(0.125)
-				.blendMode(colourScheme == .light ? .normal : .hardLight)
-		}
+		.background(eventColour.opacity(0.125))
     }
 }
 

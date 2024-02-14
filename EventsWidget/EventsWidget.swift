@@ -15,16 +15,20 @@ struct Provider: IntentTimelineProvider {
 		SimpleEntry(date: Date(), configuration: ConfigurationIntent())
 	}
 	
-	func getSnapshot(for configuration: ConfigurationIntent,
-					 in context: Context,
-					 completion: @escaping (SimpleEntry) -> ()) {
+	func getSnapshot(
+		for configuration: ConfigurationIntent,
+		in context: Context,
+		completion: @escaping (SimpleEntry) -> ()
+	) {
 		let entry = SimpleEntry(date: Date(), configuration: configuration)
 		completion(entry)
 	}
 	
-	func getTimeline(for configuration: ConfigurationIntent,
-					 in context: Context,
-					 completion: @escaping (Timeline<Entry>) -> ()) {
+	func getTimeline(
+		for configuration: ConfigurationIntent,
+		in context: Context,
+		completion: @escaping (Timeline<Entry>) -> ()
+	) {
 		let entry = SimpleEntry(date: .now, configuration: configuration)
 		let timeline = Timeline(entries: [entry], policy: .atEnd)
 		completion(timeline)
@@ -38,15 +42,13 @@ struct SimpleEntry: TimelineEntry {
 
 struct WidgetDate: View {
 	var body: some View {
-		VStack(alignment: .leading, spacing: .zero) {
-			Text(Date.now.formatted(.dateTime.weekday(.wide)))
-				.font(.footnote.weight(.semibold))
-				.foregroundStyle(.linearGradient(colors: [.red, .pink],
-												 startPoint: .top,
-												 endPoint: .bottom))
+		VStack(alignment: .leading, spacing: -3) {
+			Text(Date.now.formatted(.dateTime.weekday(.wide)).uppercased())
+				.font(.caption2.weight(.semibold))
+				.foregroundStyle(.red)
 			
 			Text(Date.now.formatted(.dateTime.day()))
-				.font(.title3.weight(.semibold))
+				.font(.largeTitle.weight(.light))
 		}
 		.padding(.leading, 4)
 		.offset(y: 2)
@@ -76,48 +78,37 @@ struct EventsWidgetEntryView: View {
 		}
 		
 		// Ensures that the events fit the size of their widgets.
-		let limit: Int? = {
-			switch widgetFamily {
-				case .systemSmall, .systemMedium: return 2
-				case .systemLarge: return 6
-				default: return nil
-			}
-		}()
-		
-		if let limit = limit {
-			return Array(events.prefix(limit))
-		} else {
-			return events
+		switch widgetFamily {
+			case .systemSmall, .systemMedium: return Array(events.prefix(2))
+			case .systemLarge: return Array(events.prefix(6))
+			default: return events
 		}
 	}
 	
 	var body: some View {
-		Group {
-			if !canAccessEvents {
-				Placeholder("No Access to Events")
+		if !canAccessEvents {
+			Placeholder("No Access to Events")
+		} else {
+			let events = displayedEvents
+			
+			if events.isEmpty {
+				Placeholder("No more jobs!")
 			} else {
-				let events = displayedEvents
-				
-				if events.isEmpty {
-					Placeholder("No more jobs!")
-				} else {
-					VStack(alignment: .leading, spacing: 8) {
-						WidgetDate()
-						
-						VStack(spacing: 6) {
-							ForEach(events, id: \.eventIdentifier) { event in
-								EventItem(event)
-									.clipShape(ContainerRelativeShape())
-							}
+				VStack(alignment: .leading, spacing: .zero) {
+					WidgetDate()
+						.padding(.bottom, 8)
+					
+					VStack(spacing: 6) {
+						ForEach(events, id: \.eventIdentifier) { event in
+							EventItem(event)
+								.clipShape(.containerRelative)
 						}
-						
-						Spacer()
 					}
-					.padding([.top, .horizontal], 12)
+					
+					Spacer()
 				}
 			}
 		}
-		.background(Color(uiColor: .systemBackground))
 	}
 }
 
@@ -126,10 +117,9 @@ struct EventsWidget: Widget {
 	let kind: String = "EventsWidget"
 	
 	var body: some WidgetConfiguration {
-		IntentConfiguration(kind: kind,
-							intent: ConfigurationIntent.self,
-							provider: Provider()) { entry in
+		IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
 			EventsWidgetEntryView(entry: entry)
+				.containerBackground(.background, for: .widget)
 		}
 		.configurationDisplayName("Today's Events")
 		.description("Your remaining events for today.")

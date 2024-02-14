@@ -8,28 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-	@EnvironmentObject private var eventStore: EventStore
+	@Environment(EventStore.self) private var eventStore
 	
     var body: some View {
-		NavigationView {
-			Group {
-				if eventStore.canAccessEvents {
-					VStack(alignment: .leading, spacing: 8) {
-						ForEach(eventStore.events(for: .now), id: \.eventIdentifier) { event in
-							EventItem(event)
-								.cornerRadius(14)
-						}
+		NavigationStack {
+			if eventStore.canAccessEvents {
+				VStack(alignment: .leading, spacing: 8) {
+					ForEach(eventStore.todaysEvents, id: \.eventIdentifier) { event in
+						EventItem(event)
+							.clipShape(.rect(cornerRadius: 14))
 					}
-					.padding(.horizontal)
-					.toolbar {
-						ToolbarItem(placement: .navigationBarTrailing) {
-							Button("Add Event") {
-								eventStore.addEvent()
-							}
-							.buttonStyle(.borderedProminent)
-						}
+				}
+				.padding(.horizontal)
+				.toolbar {
+					ToolbarItem(placement: .navigationBarTrailing) {
+						Button("Add Event", action: eventStore.addEvent)
 					}
-				} else {
+				}
+				.navigationTitle("Events")
+			} else {
+				ContentUnavailableView {
 					Button("Request Access") {
 						Task {
 							await eventStore.requestAccess()
@@ -38,9 +36,7 @@ struct ContentView: View {
 					.buttonStyle(.borderedProminent)
 				}
 			}
-			.navigationTitle("Events")
 		}
-		.navigationViewStyle(.stack)
 	}
 }
 

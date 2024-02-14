@@ -12,7 +12,7 @@ struct EventsWidgetApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-				.environmentObject(EventStore.shared)
+				.environment(EventStore.shared)
         }
     }
 }
